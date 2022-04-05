@@ -9,27 +9,39 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: subosito/flutter-action@v1.5.0
-      - name: Install Dependencies
+      - name: Install Dependencies in Another Package
         working-directory: another_package
         run: flutter pub get
+
+      - name: Install Dependencies in Flutter Package
         working-directory: flutter_package
         run: flutter pub get
+
+      - name: Install Dependencies in Package.
         working-directory: package
         run: flutter pub get
 
-      - name: Format
+      - name: Format Another Package
         working-directory: another_package
         run: flutter format --set-exit-if-changed lib test
+
+      - name: Format Flutter Package
         working-directory: flutter_package
         run: flutter format --set-exit-if-changed lib test
+
+      - name: Format Package
         working-directory: package
         run: flutter format --set-exit-if-changed lib test
 
-      - name: Analyze
+      - name: Analyze Another Package
         working-directory: another_package
         run: flutter analyze lib test
+
+      - name: Analyze Flutter Package.
         working-directory: flutter_package
         run: flutter analyze lib test
+
+      - name: Analyze Package
         working-directory: package
         run: flutter analyze lib test
 
