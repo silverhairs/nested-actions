@@ -13,9 +13,10 @@ jobs:
         working-directory: another_package
         run: flutter packages get
 
-      - name: Install Dependencies in Flutter Package
-        working-directory: flutter_package
-        run: flutter packages get
+      - name: Flutter Package
+        - name: Install deps
+          working-directory: flutter_package
+          run: flutter packages get
 
       - name: Install Dependencies in Package.
         working-directory: package
