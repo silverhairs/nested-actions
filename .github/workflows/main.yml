@@ -11,15 +11,15 @@ jobs:
       - uses: subosito/flutter-action@v1.5.0
       - name: Install Dependencies in Another Package
         working-directory: another_package
-        run: flutter pub get
+        run: flutter packages get
 
       - name: Install Dependencies in Flutter Package
         working-directory: flutter_package
-        run: flutter pub get
+        run: flutter packages get
 
       - name: Install Dependencies in Package.
         working-directory: package
-        run: flutter pub get
+        run: flutter packages get
 
       - name: Format Another Package
         working-directory: another_package
